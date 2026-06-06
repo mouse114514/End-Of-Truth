@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqxnm7qh3v5y"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_main_menu"]
+[ext_resource type="Texture2D" uid="uid://b7b6x8i8kcp8w" path="res://look_tscn/mouse.png" id="2_h7dqe"]
+[ext_resource type="FontFile" uid="uid://bv0akg3f8ys1g" path="res://font/wdnrh.ttf" id="3_w5bml"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_main_menu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContinueLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "继续游戏"
+horizontal_alignment = 1
+
+[node name="SettingsLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "设置"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(302, 306)
+scale = Vector2(20, 20)
+texture = ExtResource("2_h7dqe")
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 2
+offset_left = 133.0
+offset_top = 89.0
+offset_right = 1089.0
+offset_bottom = 240.0
+theme_override_fonts/font = ExtResource("3_w5bml")
+theme_override_font_sizes/font_size = 150
+text = "End of Truth"

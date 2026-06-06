@@ -1,0 +1,22 @@
+{
+	"types": {
+		"0": {
+			"base_hp": 50,
+			"max_hp": 50,
+			"bullet_v": 0,
+			"turn_types": 3,
+			"battle_BGM": "res://music/muc/cndfriend.ogg"
+		},
+		"1": {
+			"base_hp": 100,
+			"max_hp": 100,
+			"bullet_v": 1,
+			"turn_types": 4,
+			"battle_BGM": "res://music/muc/iwill.ogg"
+		}
+	},
+	"catalog": {
+		"st_flw": { "type": 0, "battle_name": "金盏花", "is_dodge": true, "sprite_texture": "res://player/batt/enemy/Marigold.png", "sprite_scale": 0.07 },
+		"bt_cat": { "type": 1, "battle_name": "小猫咪", "is_dodge": false, "sprite_texture": "res://player/batt/enemy/cat.png", "sprite_scale": 1 }
+	}
+}

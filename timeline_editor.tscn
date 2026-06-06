@@ -1,0 +1,215 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfhrjbnhu6fl3"]
+
+[ext_resource type="Script" path="res://timeline_editor.gd" id="1_tle"]
+[ext_resource type="Texture2D" uid="uid://dtjhdpoa2axv5" path="res://player/batt/little.png" id="2_mrg"]
+
+[node name="TimelineEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tle")
+
+[node name="TopBar" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TimeAxis" type="HSlider" parent="TopBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.5
+anchor_right = 0.7
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 15.0
+tick_count = 16
+
+[node name="TickLabel" type="Label" parent="TopBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.72
+anchor_top = 0.5
+anchor_right = 0.85
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "tick: 0 / 0"
+horizontal_alignment = 1
+
+[node name="BtnPlay" type="Button" parent="TopBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.87
+anchor_top = 0.5
+anchor_right = 0.98
+anchor_bottom = 0.5
+offset_top = -18.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "播放预览"
+
+[node name="LeftPanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 60.0
+offset_right = 150.0
+offset_bottom = -60.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="LeftPanel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LeftPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterPreview" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 160.0
+offset_top = 60.0
+offset_right = 800.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BattleBox" type="ColorRect" parent="CenterPreview"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -130.0
+offset_right = 350.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BattleBoxBorder" type="ColorRect" parent="CenterPreview/BattleBox"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 703.0
+offset_bottom = 263.0
+
+[node name="BattleBoxInner" type="ColorRect" parent="CenterPreview/BattleBox/BattleBoxBorder"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 699.0
+offset_bottom = 257.0
+color = Color(0, 0, 0, 1)
+
+[node name="EnemySprite" type="Sprite2D" parent="CenterPreview/BattleBox"]
+position = Vector2(350, -78)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_mrg")
+
+[node name="MuzzleMarkers" type="Node2D" parent="CenterPreview/BattleBox"]
+
+[node name="BulletContainer" type="Node2D" parent="CenterPreview/BattleBox"]
+
+[node name="RightPanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = 60.0
+offset_right = -10.0
+offset_bottom = -60.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="RightPanel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RightPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LblActionType" type="Label" parent="RightPanel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "检查器"
+horizontal_alignment = 1
+
+[node name="BottomBar" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -50.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TreeTimeline" type="Tree" parent="BottomBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+allow_rmb_select = true
+hide_root = true
+
+[node name="BtnSave" type="Button" parent="BottomBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.15
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_bottom = 15.0
+grow_vertical = 2
+text = "保存 JSON"
+
+[node name="BtnAddTimeline" type="Button" parent="BottomBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.17
+anchor_top = 0.5
+anchor_right = 0.32
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_bottom = 15.0
+grow_vertical = 2
+text = "新增回合"
+
+[node name="BtnAddTick" type="Button" parent="BottomBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.34
+anchor_top = 0.5
+anchor_right = 0.49
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_bottom = 15.0
+grow_vertical = 2
+text = "新增 Tick"

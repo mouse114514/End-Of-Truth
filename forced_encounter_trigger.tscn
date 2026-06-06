@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx2oun3n2jfiw"]
+
+[ext_resource type="Script" path="res://forced_encounter_trigger.gd" id="1_wbgg8"]
+[ext_resource type="PackedScene" uid="uid://8riuna31022x" path="res://bullet_hell_scene.tscn" id="2_njn84"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wifkp"]
+radius = 87.5514
+
+[node name="ForcedEncounterTrigger" type="Area2D" groups=["battle_trigger"]]
+script = ExtResource("1_wbgg8")
+enemy_scene = ExtResource("2_njn84")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(89.5, 22)
+shape = SubResource("CircleShape2D_wifkp")
+debug_color = Color(1, 0, 0, 0.419608)

@@ -9,10 +9,13 @@ const PACK2_DIR = SFX_DIR + "pack2/"
 
 func _ready():
 	sound_paths = {
+		# UI
 		"button": PACK1_DIR + "button.wav",
 		"select": PACK1_DIR + "select.wav",
 		"confirm": PACK1_DIR + "confirm.wav",
 		"save": PACK1_DIR + "save.wav",
+		
+		# Combat
 		"damage": PACK1_DIR + "damage.wav",
 		"damage_c": PACK1_DIR + "damage_c.wav",
 		"hurt": PACK2_DIR + "hurt.wav",
@@ -23,15 +26,23 @@ func _ready():
 		"slash_alt": PACK2_DIR + "slash_alt.wav",
 		"powerful_hit": PACK1_DIR + "powerful_hit.wav",
 		"book_attack": PACK1_DIR + "book_attack.wav",
+		
+		# Battle
 		"battle_start": PACK2_DIR + "battle_start.wav",
 		"warning": PACK2_DIR + "warning.wav",
 		"alert": PACK2_DIR + "alert.wav",
+		
+		# Player
 		"level_up": PACK2_DIR + "level_up.wav",
 		"heal": PACK2_DIR + "heal.wav",
+		
+		# Soul
 		"soul_shatter": PACK2_DIR + "soul_shatter.wav",
 		"soul_shatter_alt": PACK2_DIR + "soul_shatter_alt.wav",
 		"break": PACK2_DIR + "break.wav",
 		"break_alt": PACK2_DIR + "break_alt.wav",
+		
+		# NPCs
 		"toriel_talk": PACK1_DIR + "toriel_talk.wav",
 		"toriel_angry": PACK1_DIR + "toriel_angry.wav",
 		"flowey_talk": PACK2_DIR + "flowey_talk.wav",
@@ -39,31 +50,41 @@ func _ready():
 		"sans_talk": PACK1_DIR + "sans_talk.wav",
 		"npc_talk": PACK1_DIR + "npc_talk.wav",
 		"silent_talk": PACK1_DIR + "silent_talk.wav",
+		
+		# Gaster Blaster
 		"gaster_charge": PACK1_DIR + "gaster_charge.wav",
 		"gaster_charge_2": PACK1_DIR + "gaster_charge_2.wav",
 		"gaster_charge_loop": PACK1_DIR + "gaster_charge_loop.ogg",
 		"gaster_fire": PACK1_DIR + "gaster_fire.wav",
 		"gaster_blaster": PACK1_DIR + "gaster_blaster.wav",
 		"flash": PACK1_DIR + "flash.wav",
+		
+		# Environment
 		"elevator": PACK1_DIR + "elevator.wav",
 		"bell": PACK2_DIR + "bell.wav",
 		"bell_alt": PACK2_DIR + "bell_alt.wav",
 		"phone": PACK2_DIR + "phone.wav",
 		"mouse": PACK1_DIR + "mouse.wav",
+		
+		# Special
 		"stand_up": PACK1_DIR + "stand_up.wav",
 		"flee": PACK1_DIR + "flee.wav",
 		"logo": PACK1_DIR + "logo.ogg",
 		"title_start": PACK1_DIR + "title_start.ogg",
 		"settings": PACK1_DIR + "settings.ogg",
-		"blackout": PACK2_DIR + "blackout.wav"
+		
+		# Effects
+		"blackout": PACK2_DIR + "blackout.wav",
 	}
 
 func _get_stream(sound_name: String) -> AudioStream:
 	if not sound_paths.has(sound_name):
 		push_warning("SoundManager: sound '%s' not found" % sound_name)
 		return null
+	
 	if loaded_streams.has(sound_name):
 		return loaded_streams[sound_name]
+	
 	var stream = load(sound_paths[sound_name])
 	if stream:
 		loaded_streams[sound_name] = stream
@@ -73,9 +94,11 @@ func play(sound_name: String, volume_db: float = 0.0, pitch_scale: float = 1.0):
 	var stream = _get_stream(sound_name)
 	if not stream:
 		return
+	
 	var scene = get_tree().current_scene
 	if not scene or not is_instance_valid(scene):
 		return
+	
 	var audio = AudioStreamPlayer.new()
 	audio.volume_db = volume_db
 	audio.pitch_scale = pitch_scale
@@ -91,14 +114,19 @@ func play_ui(sound_name: String = "confirm"):
 
 func play_damage():
 	play("damage", -5.0)
+
 func play_enemy_death():
 	play("enemy_death", -5.0)
+
 func play_battle_start():
 	play("battle_start", -5.0)
+
 func play_hurt():
 	play("hurt", -8.0)
+
 func play_level_up():
 	play("level_up", -5.0)
+
 func play_heal():
 	play("heal", -5.0)
 
@@ -108,6 +136,7 @@ func play_talk(npc_type: String = "npc_talk", fixed_pitch: float = -1.0):
 
 func play_gaster_charge():
 	play("gaster_charge", -5.0)
+
 func play_gaster_fire():
 	play("gaster_fire", -5.0)
 
@@ -117,6 +146,8 @@ func play_title_start() -> float:
 		play("title_start", -5.0)
 		return stream.get_length()
 	return 5.12
+
+# ==================== BGM ====================
 
 var _bgm_player: AudioStreamPlayer
 

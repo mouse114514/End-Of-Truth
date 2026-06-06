@@ -1,0 +1,9 @@
+[gd_resource type="RichTextEffect" script=ExtResource("1_rainbow")]
+
+[ext_resource type="Script" path="res://rainbow_effect.gd" id="1_rainbow"]
+
+[resource]
+bbcode = "rainbow"
+freq = 1.0
+sat = 1.0
+val = 1.0

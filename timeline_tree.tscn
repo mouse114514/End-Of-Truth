@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccb4e01t3ssbk"]
+
+[ext_resource type="Script" path="res://timeline_editor.gd" id="1_hgr0a"]
+
+[node name="TimelineTree" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_hgr0a")

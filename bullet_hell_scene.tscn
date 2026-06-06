@@ -1,0 +1,123 @@
+[gd_scene load_steps=5 format=3 uid="uid://8riuna31022x"]
+
+[ext_resource type="Script" path="res://bullet_hell_scene.gd" id="1_8gpkh"]
+[ext_resource type="PackedScene" uid="uid://cuh2t0ngllj3c" path="res://player_soul.tscn" id="1_cq8if"]
+[ext_resource type="Script" path="res://enemy.gd" id="2_w6iy5"]
+[ext_resource type="Texture2D" uid="uid://dtjhdpoa2axv5" path="res://player/batt/little.png" id="5_ipwro"]
+
+[node name="BulletHellScene" type="CanvasLayer"]
+script = ExtResource("1_8gpkh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1158.0
+offset_bottom = 652.0
+color = Color(0, 0, 0, 1)
+
+[node name="background" type="Sprite2D" parent="ColorRect"]
+position = Vector2(598, -52)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_ipwro")
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
+position = Vector2(565, 181)
+scale = Vector2(0.07, 0.07)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 289.0
+offset_right = 921.0
+offset_bottom = 548.0
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 699.0
+offset_bottom = 257.0
+
+[node name="BulletContainer" type="Node2D" parent="ColorRect"]
+
+[node name="Enemy" type="Node2D" parent="ColorRect"]
+script = ExtResource("2_w6iy5")
+
+[node name="HealthBar" type="ProgressBar" parent="ColorRect/Enemy"]
+offset_left = -67.0
+offset_top = -109.0
+offset_right = 67.0
+offset_bottom = -104.0
+show_percentage = false
+
+[node name="BulletPattern" type="Node2D" parent="ColorRect/Enemy"]
+
+[node name="PlayerSoul" parent="." instance=ExtResource("1_cq8if")]
+position = Vector2(582, 405)
+
+[node name="BlackRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 1156.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="PlayerHealthBar" type="ProgressBar" parent="."]
+offset_right = 80.0
+offset_bottom = 30.0
+show_percentage = false
+
+[node name="HealthLabel" type="Label" parent="."]
+offset_right = 50.0
+offset_bottom = 30.0
+text = "00/00"
+horizontal_alignment = 1
+
+[node name="HPLabel" type="Label" parent="."]
+offset_right = 50.0
+offset_bottom = 30.0
+text = "HP"
+horizontal_alignment = 1
+
+[node name="QTEContainer" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 400.0
+offset_top = 250.0
+offset_right = 750.0
+offset_bottom = 400.0
+
+[node name="QTEBackground" type="ColorRect" parent="QTEContainer"]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 150.0
+color = Color(0, 0, 0, 1)
+
+[node name="WhiteLine" type="ColorRect" parent="QTEContainer"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 70.0
+offset_right = 345.0
+offset_bottom = 80.0
+
+[node name="YellowLine1" type="ColorRect" parent="QTEContainer"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 20.0
+offset_right = 300.0
+offset_bottom = 30.0
+color = Color(1, 1, 0, 1)
+
+[node name="YellowLine2" type="ColorRect" parent="QTEContainer"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 70.0
+offset_right = 300.0
+offset_bottom = 80.0
+color = Color(1, 1, 0, 1)
+
+[node name="YellowLine3" type="ColorRect" parent="QTEContainer"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 120.0
+offset_right = 300.0
+offset_bottom = 130.0
+color = Color(1, 1, 0, 1)

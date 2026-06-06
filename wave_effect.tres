@@ -1,0 +1,8 @@
+[gd_resource type="RichTextEffect" script=ExtResource("1_wave")]
+
+[ext_resource type="Script" path="res://wave_effect.gd" id="1_wave"]
+
+[resource]
+bbcode = "wave"
+amp = 6.0
+freq = 2.0

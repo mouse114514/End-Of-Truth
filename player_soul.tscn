@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuh2t0ngllj3c"]
+
+[ext_resource type="Script" path="res://player_soul.gd" id="1_l01uw"]
+[ext_resource type="Texture2D" uid="uid://cyymyq73o5y1d" path="res://player/batt/soul.png" id="2_f8xy0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_haye0"]
+
+[node name="PlayerSoul" type="Area2D" groups=["soul"]]
+script = ExtResource("1_l01uw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_haye0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_f8xy0")

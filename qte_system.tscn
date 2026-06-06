@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ebvodiw77s8k"]
+
+[ext_resource type="Script" path="res://qte_system.gd" id="1_qte_system"]
+
+[node name="QTESystem" type="CanvasLayer"]
+script = ExtResource("1_qte_system")
