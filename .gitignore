@@ -1,0 +1,29 @@
+# Godot specific
+.godot/
+*.import
+*.translation
+import/
+export/
+exports/
+translations/
+.android/
+.ios/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+*.tmp
+*.swp
+*.swo
+*~
+
+# Logs
+logs/
+.logs/
+*.log
+
+# Godot user data
+godot_temp_*
