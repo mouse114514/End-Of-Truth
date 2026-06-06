@@ -247,8 +247,8 @@ This project's code is licensed under **GNU General Public License v3.0** — se
 ### Assets & IP
 **End Of Truth** is a non-official fan game.
 
-- **Original assets**: Most artwork, character designs, music, and sound effects are original creations by the development team.
-- **Undertale content**: Only the map tile assets are sourced from Undertale. All other Undertale-related elements are original interpretations.
+- **Original & derivative assets**: Artwork, character designs, music, and sound effects are a mix of original creations and fan-made derivatives.
+- **Undertale content**: Only the map tile assets are directly ported from Undertale.
 - **Undertale** is the property of **Toby Fox**.
 
 This is a fan project created out of passion and respect for the original work. It is not affiliated with or endorsed by Toby Fox.
