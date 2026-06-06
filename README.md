@@ -245,7 +245,11 @@ func handle_mobile_input(input_vec: Vector2): # 2. Implement this method
 This project's code is licensed under **GNU General Public License v3.0** — see [LICENSE](LICENSE).
 
 ### Assets & IP
-**End Of Truth** is a non-official fan game. **Undertale** and all related characters, music, and elements are the property of **Toby Fox**.
+**End Of Truth** is a non-official fan game.
+
+- **Original assets**: Most artwork, character designs, music, and sound effects are original creations by the development team.
+- **Undertale content**: Only the map tile assets are sourced from Undertale. All other Undertale-related elements are original interpretations.
+- **Undertale** is the property of **Toby Fox**.
 
 This is a fan project created out of passion and respect for the original work. It is not affiliated with or endorsed by Toby Fox.
 
@@ -253,9 +257,18 @@ This is a fan project created out of passion and respect for the original work. 
 
 ## Credits
 
-- **Toby Fox** — Creating Undertale, the inspiration for this project
-- **Godot Engine Team** — The open-source game engine that made this possible
-- **Contributors & Testers** — Everyone who has helped shape this project
+### Core Team
+- **Xmouse** — Programming & Post-production
+- **克斯里德** — Art & Story
+- **EmoCez** — Textures & Sound Effects
+- **Xx_出c好吃_xX** — Music & Operations
+- **飞** — Debug & Music
+
+### Special Thanks
+- **青龙狱碧** — Textures
+- **粥伞** — Textures
+- **Toby Fox** — Creating Undertale
+- **Godot Engine Team** — The open-source game engine
 
 ---
 
