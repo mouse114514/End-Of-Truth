@@ -24,5 +24,10 @@ logs/
 .logs/
 *.log
 
+# Backup files
+map_backup/
+*_backup.json
+*.bak
+
 # Godot user data
 godot_temp_*
