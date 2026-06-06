@@ -1,6 +1,5 @@
 # Godot specific
 .godot/
-*.import
 *.translation
 import/
 export/
