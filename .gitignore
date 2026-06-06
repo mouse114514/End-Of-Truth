@@ -20,14 +20,22 @@ desktop.ini
 *~
 
 # Logs
-logs/
 .logs/
+logs/
 *.log
 
-# Backup files
+# Backup / copy files
 map_backup/
 *_backup.json
 *.bak
+* - 副本*
+
+# Android export templates (auto-downloaded by Godot)
+android/build/libs/debug/*.aar
+android/build/libs/release/*.aar
+
+# Utility scripts (not game assets)
+music/sfx/rename.*
 
 # Godot user data
 godot_temp_*
